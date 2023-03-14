@@ -41,7 +41,7 @@ const TermosCondicoes: NextPage<IProps> = ({ data }) => {
 
 export async function getStaticProps(context: NextPageContext) {
   const lang = context.locale;
-  const baseUrl = "https://vercel.com/pdrmenezes/especializacao-front-iii-next-i18n";
+  const baseUrl = "https://especializacao-front-iii-next-i18n.vercel.app";
 
   const response = await fetch(`${baseUrl}/api/tycs/${lang}`);
 

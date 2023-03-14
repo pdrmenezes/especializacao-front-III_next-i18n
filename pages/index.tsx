@@ -70,8 +70,8 @@ const Home: NextPage<IProps> = ({ data }) => {
 
 export async function getServerSideProps(context: NextPageContext) {
   const lang = context.locale;
-
-  const baseUrl = "https://vercel.com/pdrmenezes/especializacao-front-iii-next-i18n";
+  //nextjs13-new-features.vercel.app/
+  https: const baseUrl = "https://especializacao-front-iii-next-i18n.vercel.app";
 
   const response = await fetch(`${baseUrl}/api/products/${lang}`);
 

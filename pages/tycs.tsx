@@ -41,9 +41,13 @@ const TermosCondicoes: NextPage<IProps> = ({ data }) => {
 
 export async function getStaticProps(context: NextPageContext) {
   const lang = context.locale;
-  const baseUrl = process.env.VERCEL_URL;
 
-  const response = await fetch(`https://${baseUrl}/api/tycs/${lang}`);
+  const protocol = "http://";
+  const baseUrl = "localhost:3000";
+  // const protocol = "https://";
+  // const baseUrl = process.env.VERCEL_URL;
+
+  const response = await fetch(`${protocol}${baseUrl}/api/tycs/${lang}`);
 
   const data = await response.json();
 

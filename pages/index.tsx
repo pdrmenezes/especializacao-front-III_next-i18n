@@ -49,9 +49,7 @@ const Home: NextPage<IProps> = ({ data }) => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>
-          {HEADER.TITLE} - {HEADER.PRODUCTS}
-        </title>
+        <title>{`${HEADER.TITLE} - ${HEADER.PRODUCTS}`}</title>
         <meta name="description" content="lista de produtos em destaque Loja Gratuito" />
       </Head>
       <main className={styles.main}>
@@ -71,9 +69,12 @@ const Home: NextPage<IProps> = ({ data }) => {
 export async function getServerSideProps(context: NextPageContext) {
   const lang = context.locale;
 
-  const baseUrl = process.env.VERCEL_URL;
+  const protocol = "http://";
+  const baseUrl = "localhost:3000";
+  // const protocol = "https://";
+  // const baseUrl = process.env.VERCEL_URL;
 
-  const response = await fetch(`https://${baseUrl}/api/products/${lang}`);
+  const response = await fetch(`${protocol}${baseUrl}/api/products/${lang}`);
 
   const data = await response.json();
 

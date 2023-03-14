@@ -69,10 +69,10 @@ const Home: NextPage<IProps> = ({ data }) => {
 export async function getServerSideProps(context: NextPageContext) {
   const lang = context.locale;
 
-  const protocol = "http://";
-  const baseUrl = "localhost:3000";
-  // const protocol = "https://";
-  // const baseUrl = process.env.VERCEL_URL;
+  // const protocol = "http://";
+  // const baseUrl = "localhost:3000";
+  const protocol = "https://";
+  const baseUrl = process.env.VERCEL_URL;
 
   const response = await fetch(`${protocol}${baseUrl}/api/products/${lang}`);
 
